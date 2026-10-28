@@ -1,16 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap");
 
 :root {
-  --bg: #07090d;
+  --bg: #050a17;
   --surface: rgba(255, 255, 255, 0.03);
   --surface-hover: rgba(255, 255, 255, 0.06);
   --text: #e8edf2;
   --muted: #8a96a3;
-  --accent: #5ef0d0;
-  --accent-2: #7aa2ff;
-  --accent-ink: #04110e;
+  --accent: #9db2ff;
+  --accent-2: #c9d4ff;
+  --navy: #1e3a8a;
+  --navy-bright: #2c4fb8;
+  --accent-ink: #ffffff;
   --border: rgba(255, 255, 255, 0.09);
-  --glow: 0 0 0 1px rgba(94, 240, 208, 0.45), 0 10px 40px -10px rgba(94, 240, 208, 0.35);
+  --glow: 0 0 0 1px rgba(60, 95, 210, 0.45), 0 10px 40px -10px rgba(60, 95, 210, 0.35);
   --radius: 14px;
   --ease: cubic-bezier(.2, .8, .2, 1);
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -22,8 +24,8 @@ body {
   margin: 0;
   background-color: var(--bg);
   background-image:
-    radial-gradient(900px 500px at 85% -10%, rgba(122, 162, 255, 0.12), transparent 60%),
-    radial-gradient(700px 400px at -10% 30%, rgba(94, 240, 208, 0.08), transparent 60%),
+    radial-gradient(900px 500px at 85% -10%, rgba(30, 58, 138, 0.35), transparent 60%),
+    radial-gradient(700px 400px at -10% 30%, rgba(60, 95, 210, 0.08), transparent 60%),
     linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: auto, auto, 48px 48px, 48px 48px;
@@ -32,7 +34,7 @@ body {
   font: 17px/1.65 "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-::selection { background: var(--accent); color: var(--accent-ink); }
+::selection { background: var(--navy); color: var(--accent-ink); }
 img { max-width: 100%; display: block; }
 a { color: var(--accent); text-decoration: none; transition: color .25s var(--ease); }
 a:hover { color: #fff; }
@@ -53,7 +55,7 @@ h2::before {
 /* Header + nav */
 .site-header {
   position: sticky; top: 0; z-index: 10;
-  background: rgba(7, 9, 13, 0.7);
+  background: rgba(5, 10, 23, 0.72);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
@@ -92,7 +94,7 @@ h2::before {
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--accent);
-  border: 1px solid rgba(94, 240, 208, 0.3);
+  border: 1px solid rgba(60, 95, 210, 0.3);
   border-radius: 999px;
   padding: 4px 12px;
   margin: 0;
@@ -101,7 +103,7 @@ h1 {
   font-size: clamp(2.3rem, 6vw, 4rem);
   line-height: 1.05;
   margin: 20px 0 20px;
-  background: linear-gradient(100deg, #fff 30%, var(--accent) 70%, var(--accent-2));
+  background: linear-gradient(100deg, #fff 35%, var(--accent-2) 65%, var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -114,11 +116,11 @@ h1 {
   font-family: var(--mono);
   font-size: 14px;
   letter-spacing: .03em;
-  background: var(--accent);
+  background: var(--navy);
   color: var(--accent-ink);
   padding: 12px 22px;
   border-radius: 10px;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--navy-bright);
   transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease), color .3s var(--ease);
 }
 .btn::after {
@@ -128,10 +130,10 @@ h1 {
   transform: translateX(-120%);
   transition: transform .7s var(--ease);
 }
-.btn:hover { transform: translateY(-2px); box-shadow: var(--glow); color: var(--accent-ink); }
+.btn:hover { transform: translateY(-2px); box-shadow: var(--glow); color: var(--accent-ink); background: var(--navy-bright); }
 .btn:hover::after { transform: translateX(120%); }
-.btn-outline { background: transparent; color: var(--accent); }
-.btn-outline:hover { background: rgba(94, 240, 208, 0.1); color: var(--accent); }
+.btn-outline { background: transparent; color: var(--accent); border-color: var(--navy-bright); }
+.btn-outline:hover { background: rgba(60, 95, 210, 0.18); color: #fff; }
 
 /* Project cards */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
@@ -151,7 +153,8 @@ h1 {
   content: "View project →";
   position: absolute; inset: auto 12px 12px auto;
   font-family: var(--mono); font-size: 12px;
-  color: var(--accent-ink); background: var(--accent);
+  color: var(--accent-ink); background: var(--navy);
+  border: 1px solid var(--navy-bright);
   padding: 4px 10px; border-radius: 999px;
   opacity: 0; transform: translateY(8px);
   transition: opacity .35s var(--ease), transform .35s var(--ease);
@@ -163,7 +166,7 @@ h1 {
 }
 .card:hover {
   transform: translateY(-6px);
-  border-color: rgba(94, 240, 208, 0.5);
+  border-color: rgba(60, 95, 210, 0.5);
   background: var(--surface-hover);
   box-shadow: var(--glow);
 }
@@ -185,7 +188,7 @@ h1 {
   color: var(--muted);
   transition: color .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease);
 }
-.tags li:hover { color: var(--accent); border-color: rgba(94, 240, 208, 0.5); background: rgba(94, 240, 208, 0.06); }
+.tags li:hover { color: var(--accent); border-color: rgba(60, 95, 210, 0.5); background: rgba(60, 95, 210, 0.06); }
 
 /* Contact */
 .contact { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
@@ -199,7 +202,7 @@ h1 {
 .project-hero { margin: 32px 0; }
 .project-hero a { display: block; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--border); transition: box-shadow .45s var(--ease), border-color .45s var(--ease); }
 .project-hero img { transition: transform .8s var(--ease); }
-.project-hero a:hover { border-color: rgba(94, 240, 208, 0.5); box-shadow: var(--glow); }
+.project-hero a:hover { border-color: rgba(60, 95, 210, 0.5); box-shadow: var(--glow); }
 .project-hero a:hover img { transform: scale(1.02); }
 .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin: 24px 0 40px; }
 .meta div {
@@ -209,7 +212,7 @@ h1 {
   padding: 14px 16px;
   transition: border-color .3s var(--ease), background .3s var(--ease);
 }
-.meta div:hover { border-color: rgba(94, 240, 208, 0.4); background: var(--surface-hover); }
+.meta div:hover { border-color: rgba(60, 95, 210, 0.4); background: var(--surface-hover); }
 .meta dt { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
 .meta dd { margin: 4px 0 0; font-weight: 500; }
 main.narrow p { color: #c3ccd5; }
