@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Korean Speaking Cluster Map | Noah Kim GIS Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="brand" href="../index.html">Noah Kim</a>
+      <ul><li><a href="../index.html#projects">All projects</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <main class="container narrow" style="padding-top:40px">
+    <p class="eyebrow">Project 2</p>
+    <h1>Korean Speaking Cluster Map</h1>
+    <p class="lead">A spatial statistics study of where Korean speakers live across King County, Washington, and whether those communities are significantly clustered.</p>
+
+    <figure class="project-hero">
+      <a href="../images/project-2-map.jpg"><img src="../images/project-2-map.jpg" alt="Local Moran's I cluster and outlier map of Korean speakers in King County census tracts, with high-high clusters around Bellevue, Newcastle and Federal Way"></a>
+      <figcaption>Korean Speaker Clusters in King County. Local Moran's I cluster and outlier types by census tract: high-high clusters (pink), high-low outliers (red), low-high outliers (dark blue) and low-low clusters (light blue). Basemap: Esri, TomTom, Garmin, FAO, NOAA, USGS, OpenStreetMap contributors.</figcaption>
+    </figure>
+
+    <dl class="meta">
+      <div><dt>Tools</dt><dd>ArcGIS Pro</dd></div>
+      <div><dt>Data</dt><dd>US Census tract data, King County</dd></div>
+      <div><dt>Date</dt><dd>May 2026</dd></div>
+    </dl>
+
+    <h2>Approach</h2>
+    <p>I mapped census tract counts of Korean speakers and normalized them by total population to produce accurate choropleth maps. I then measured spatial clustering with Global Moran's I and Local Moran's I cluster and outlier analysis, comparing contiguity and inverse distance spatial weights to choose the best neighbor definition.</p>
+
+    <h2>Results</h2>
+    <p>All three groups showed statistically significant clustering, with Moran's I values from 0.41 to 0.55 (p &lt; 0.001). I paired these results with historical research in a written report explaining the community settlement patterns behind them.</p>
+    <p>The map shows two main high-high clusters, where tracts with many Korean speakers sit next to each other. One covers Bellevue down through Newcastle on the Eastside, and the other covers Federal Way and Lakeland in south King County. Low-low clusters stretch across south Seattle, Burien, Tukwila and SeaTac, and east toward Maple Valley. Scattered high-low outliers near Kent and Lake Tapps mark individual tracts with more Korean speakers than their neighbors.</p>
+
+    <p><a href="../index.html#projects">← Back to projects</a></p>
+  </main>
+
+  <footer class="container footer">© 2026 Noah Kim</footer>
+</body>
+</html>
